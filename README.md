@@ -8,6 +8,8 @@ Questa è una mia modifica grafica, se vuoi maggiori informazioni [vai al reposi
 4. [Setup development environment](https://github.com/MrMufflon/Leaflet.Elevation#setup-development-environment)
 5. [Customizing styles](https://github.com/MrMufflon/Leaflet.Elevation#customizing-styles)
 
+![Alt text](http://www.cityplanner.it/wp-content/uploads/2015/08/20150801_Selezione_002.png "LeafletJS elevation MOD")
+
 ### How to use
 Altitude information for each point is necessary in the given data.
 ```javascript
