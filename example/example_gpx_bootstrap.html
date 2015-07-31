@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Leaflet.Elevation</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	 <style>
+	   #map {
+	      height:500px;
+	      width:100%;
+	      padding:0px;
+	      margin:0px;
+	   }
+	</style>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" /><![endif]-->
+
+	<link rel="stylesheet" href="http://mrmufflon.github.io/Leaflet.Elevation/example/lib/elevation/Leaflet.Elevation-0.0.2.css" />
+
+	<script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+	<script type="text/javascript" src="http://mrmufflon.github.io/Leaflet.Elevation/example/lib/elevation/Leaflet.Elevation-0.0.2.min.js"></script>
+	<script type="text/javascript" src="http://mrmufflon.github.io/Leaflet.Elevation/example/lib/leaflet-gpx/gpx.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<!-- Custom styles for this template -->
+	<link href="http://getbootstrap.com/examples/theme/theme.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<!-- This site is optimized with the Yoast SEO plugin v2.3.2 - https://yoast.com/wordpress/plugins/seo/ -->
+	<meta name="description" content="Un estensione di LeafletJS che contine le configurazioni di molti Providers TileLayers"/>
+	<link itemprop='url' rel="canonical" href="http://www.cityplanner.it/leafletjs-providers-tilelayers-stai-cercando-una-cartografia-di-base/" />
+	<link rel="publisher" href="https://plus.google.com/+PJHooker/about"/>
+	<meta property="og:locale" content="it_IT" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="LeafletJS elevation MOD" />
+	<meta property="og:description" content="Un estensione di LeafletJS che contine le configurazioni di molti Providers TileLayers" />
+	<link itemprop='url' rel="canonical" href="http://www.cityplanner.it/leafletjs-providers-tilelayers-stai-cercando-una-cartografia-di-base/" />
+	<meta property="og:site_name" content="City Planner" />
+	<meta property="article:publisher" content="https://www.facebook.com/city.planner.lima" />
+	<meta property="article:author" content="https://www.facebook.com/simon.red.524" />
+	<meta property="article:tag" content="GeoOpenData" />
+	<meta property="article:tag" content="webGIS" />
+	<meta property="article:section" content="BLOG" />
+	<meta property="article:published_time" content="2015-07-30T19:00:24+00:00" />
+	<meta property="article:modified_time" content="2015-07-30T14:05:12+00:00" />
+	<meta property="og:updated_time" content="2015-07-30T14:05:12+00:00" />
+	<meta property="fb:admins" content="100004399753459" />
+	<meta property="og:image" content="http://www.cityplanner.it/wp-content/uploads/2015/08/20150801_Selezione_002.png" />
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:description" content="Un estensione di LeafletJS che contine le configurazioni di molti Providers TileLayers"/>
+	<meta name="twitter:title" content="LeafletJS elevation MOD"/>
+	<meta name="twitter:site" content="@pj_go_2020"/>
+	<meta name="twitter:domain" content="City Planner"/>
+	<meta name="twitter:image:src" content="http://www.cityplanner.it/wp-content/uploads/2015/08/20150801_Selezione_002.png"/>
+	<meta name="twitter:creator" content="@pj_go_2020"/>
+	<!-- / Yoast SEO plugin. -->
+	</head>
+	<body>
+	<div class="container theme-showcase" role="main">
+		<div class="jumbotron">
+			<h1 style="text-align:center;">Leaflet.Elevation</h1>
+			<p style="text-align:center;"><button type="button" class="btn btn-success"><i class="fa fa-github-alt"></i>&nbsp;by MrMufflon</button></p>
+		</div>
+		<div class="row">
+					<div class="col-sm-12">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">Mappa</h3>
+							</div>
+							<div class="panel-body" id="map">
+							</div>
+						</div>
+					</div><!-- /.col-sm-4 -->
+			</div>
+		</div>
+	<script type="text/javascript">
+		var map = new L.Map('map');
+
+		var url = 'https://a.tiles.mapbox.com/v4/andreasviglakis.76e0cee7/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYW5kcmVhc3ZpZ2xha2lzIiwiYSI6IlVremRqN0kifQ.CFFJsLuWWyuhgsZTb51jWg',
+			attr ='Map tiles by <a href="https://www.mapbox.com/">MapBox</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data: &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+			service = new L.TileLayer(url, {subdomains:"1234",attribution: attr});
+
+		var el = L.control.elevation();
+		el.addTo(map);
+		var g=new L.GPX("http://www.cityplanner.it/experiment_host/php/tracker_esercizio/track_esercizio.gpx", {
+			async: true,
+			 marker_options: {
+			    startIconUrl: 'http://www.cityplanner.it/supply/icon_web/mapbox-maki-51d4f10/renders/warehouse-24@2x.png',
+			    endIconUrl: 'http://www.cityplanner.it/supply/icon_web/mapbox-maki-51d4f10/renders/embassy-24@2x.png',
+			    shadowUrl: 'http://mrmufflon.github.io/Leaflet.Elevation/example/lib/leaflet-gpx/pin-shadow.png'
+			  }
+		});
+		g.on('loaded', function(e) {
+		  		map.fitBounds(e.target.getBounds());
+		});
+		g.on("addline",function(e){
+			el.addData(e.line);
+		});
+		g.addTo(map);
+		map.addLayer(service);
+	</script>
+</body>
+</html>
