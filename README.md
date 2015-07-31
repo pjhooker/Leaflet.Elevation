@@ -1,35 +1,12 @@
 Leaflet.Elevation
 =================
 
-1. [What is this?](https://github.com/MrMufflon/Leaflet.Elevation#what-is-this)
-2. [How to use](https://github.com/MrMufflon/Leaflet.Elevation#how-to-use)
+Questa è una mia modifica grafica, se vuoi maggiori informazioni [vai al repository originale](https://github.com/MrMufflon/Leaflet.Elevation)
+
+1. [CAP1](https://github.com/MrMufflon/Leaflet.Elevation#how-to-use)
 3. [Install](https://github.com/MrMufflon/Leaflet.Elevation#install-with-bower)
 4. [Setup development environment](https://github.com/MrMufflon/Leaflet.Elevation#setup-development-environment)
 5. [Customizing styles](https://github.com/MrMufflon/Leaflet.Elevation#customizing-styles)
-
-### What is this?
-A [Leaflet](http://leafletjs.com) plugin to view an interactive height profile of polylines lines using [d3](http://d3js.org). This plugin is under development.
-
-Supported and tested Browsers:
-- Chrome
-- Firefox
-- IE 10+
-
-Supported data:
-- GeoJSON [Demo](http://mrmufflon.github.io/Leaflet.Elevation/example/example.html)
-- GPX-files using [leaflet-gpx](https://github.com/mpetazzoni/leaflet-gpx) [Demo](http://mrmufflon.github.io/Leaflet.Elevation/example/example_gpx.html)
-
-*Tested with Leaflet 0.4+*
-
-<img src="http://mrmufflon.github.io/Leaflet.Elevation/images/screen.jpg"/>
-
-### Install with npm
-
-`` npm install leaflet.elevation ``
-
-### Install with Bower
-
-`` bower install leaflet.elevation ``
 
 ### How to use
 Altitude information for each point is necessary in the given data.
