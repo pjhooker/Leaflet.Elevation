@@ -3,6 +3,8 @@ Leaflet.Elevation
 
 Questa è una mia modifica grafica, se vuoi maggiori informazioni [vai al repository originale](https://github.com/MrMufflon/Leaflet.Elevation)
 
+Nella cartella Example puoi trovare la modifica example_gpx_bootstrap.html di cui [DEMO](http://www.cityplanner.it/experiment_host/php/tracker_esercizio/index_bootstrap.html)
+
 1. [CAP1](https://github.com/MrMufflon/Leaflet.Elevation#how-to-use)
 3. [Install](https://github.com/MrMufflon/Leaflet.Elevation#install-with-bower)
 4. [Setup development environment](https://github.com/MrMufflon/Leaflet.Elevation#setup-development-environment)
